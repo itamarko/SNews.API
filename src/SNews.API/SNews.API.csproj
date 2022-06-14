@@ -8,4 +8,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SNews.BusinessLogic.Interfaces\SNews.BusinessLogic.Interfaces.csproj" />
+    <ProjectReference Include="..\SNews.BusinessLogic\SNews.BusinessLogic.csproj" />
+    <ProjectReference Include="..\SNews.DependencyInjection\SNews.DependencyInjection.csproj" />
+    <ProjectReference Include="..\SNews.Mapper\SNews.Mapper.csproj" />
+  </ItemGroup>
+
 </Project>

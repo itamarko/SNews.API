@@ -4,4 +4,15 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SNews.BusinessLogic.Interfaces\SNews.BusinessLogic.Interfaces.csproj" />
+    <ProjectReference Include="..\SNews.BusinessLogic\SNews.BusinessLogic.csproj" />
+    <ProjectReference Include="..\SNews.Services.Interfaces\SNews.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\SNews.Services\SNews.Services.csproj" />
+  </ItemGroup>
+
 </Project>
