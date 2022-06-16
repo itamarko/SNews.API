@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using SNews.BusinessModel.Category;
 using SNews.BusinessModel.News;
 using SNews.DataModel.News;
 using System;
@@ -14,6 +15,7 @@ namespace SNews.Mapper
         public DataModel2BusinessModel()
         {
             this.CreateMap<GetNewsResponse, GetNewsListResponse>();
+            this.CreateMap<DataModel.Categories.Category, Category>();
         }
     }
 }

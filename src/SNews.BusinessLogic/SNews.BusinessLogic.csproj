@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SNews.BusinessLogic.Interfaces\SNews.BusinessLogic.Interfaces.csproj" />
     <ProjectReference Include="..\SNews.Mapper\SNews.Mapper.csproj" />
+    <ProjectReference Include="..\SNews.Resources\SNews.Resources.csproj" />
     <ProjectReference Include="..\SNews.Services.Interfaces\SNews.Services.Interfaces.csproj" />
   </ItemGroup>
 

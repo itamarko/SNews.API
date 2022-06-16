@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SNews.DependencyInjection;
+using SNews.Mapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,8 @@ namespace SNews.API
         {
             services.AddMyServiceDependencies();
             //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(typeof(BusinessModel2DataModel), typeof(DataModel2BusinessModel));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
