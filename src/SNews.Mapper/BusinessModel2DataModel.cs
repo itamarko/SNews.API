@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using SNews.BusinessModel.Author;
 using SNews.BusinessModel.Category;
 using SNews.BusinessModel.News;
 using SNews.DataModel.News;
@@ -13,6 +14,7 @@ namespace SNews.Mapper
             this.CreateMap<GetNewsListRequest, GetNewsRequest>();
             this.CreateMap<GetNewsRequest, GetNewsListRequest>();
             this.CreateMap<InsertCategoryRequest, DataModel.Categories.InsertCategoryRequest>();
+            this.CreateMap<InsertAuthorRequest, DataModel.Author.InsertAuthorRequest>();
         }
     }
 }

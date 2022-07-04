@@ -15,6 +15,8 @@ namespace SNews.DependencyInjection
             services.AddScoped<INewsBusinessLogic, NewsBusinessLogic>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ICategoryBusinessLogic, CategoryBusinessLogic>();
+            services.AddScoped<IAuthorBusinessLogic, AuthorBusinessLogic>();
+            services.AddScoped<IAuthorService, AuthorService>();
 
         }
     }
