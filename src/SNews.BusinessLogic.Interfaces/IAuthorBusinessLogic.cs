@@ -10,6 +10,8 @@ namespace SNews.BusinessLogic.Interfaces
 {
     public interface IAuthorBusinessLogic
     {
+        CommandResponse<List<Author>> GetAuthors();
+        CommandResponse<Author> GetAuthorById(int id);
         CommandResponse<Author> InsertAuthor(InsertAuthorRequest author);
     }
 }

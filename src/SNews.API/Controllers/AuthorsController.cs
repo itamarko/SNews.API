@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SNews.BusinessLogic.Interfaces;
+using SNews.BusinessModel;
 using SNews.BusinessModel.Author;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,38 @@ namespace SNews.API.Controllers
         public IActionResult Post(InsertAuthorRequest author)
         {
             var result = _authorBusinessLogic.InsertAuthor(author);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            CommandResponse<List<Author>> result = new CommandResponse<List<Author>>();
+            try
+            {
+                result = _authorBusinessLogic.GetAuthors();
+            }
+            catch(Exception ex)
+            {
+                result.ErrorMessage = ex.Message;
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            CommandResponse<Author> result = new CommandResponse<Author>();
+            try
+            {
+                result = _authorBusinessLogic.GetAuthorById(id);
+            }
+            catch (Exception ex)
+            {
+                result.ErrorMessage = ex.Message;
+            }
+
             return Ok(result);
         }
     }

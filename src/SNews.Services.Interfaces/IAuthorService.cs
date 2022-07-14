@@ -9,6 +9,8 @@ namespace SNews.Services.Interfaces
 {
     public interface IAuthorService
     {
+        List<Author> GetAuthors();
+        Author GetAuthorById(int id);
         Author InsertAuthor(InsertAuthorRequest request);
     }
 }

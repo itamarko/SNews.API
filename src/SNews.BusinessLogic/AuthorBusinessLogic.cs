@@ -21,6 +21,53 @@ namespace SNews.BusinessLogic
             _mapper = mapper;
             _authorService = authorService;
         }
+
+        public CommandResponse<Author> GetAuthorById(int id)
+        {
+            CommandResponse<Author> result = new CommandResponse<Author>();
+            try
+            {
+                var authorDM = _authorService.GetAuthorById(id);
+                if (authorDM != null)
+                {
+                    result.Data = _mapper.Map<Author>(authorDM);
+                }
+                else
+                {
+                    result.ErrorMessage = Resources.Resources.errServiceError;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.ErrorMessage = Resources.Resources.generalError;
+                //todo log error
+            }
+            return result;
+        }
+
+        public CommandResponse<List<Author>> GetAuthors()
+        {
+            CommandResponse<List<Author>> result = new CommandResponse<List<Author>>();
+            try
+            {
+                var authorsDM = _authorService.GetAuthors();
+                if (authorsDM != null)
+                {
+                    result.Data = _mapper.Map<List<Author>>(authorsDM);
+                }
+                else
+                {
+                    result.ErrorMessage = Resources.Resources.errServiceError;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.ErrorMessage = Resources.Resources.generalError;
+                //todo log error
+            }
+            return result;
+        }
+
         public CommandResponse<Author> InsertAuthor(InsertAuthorRequest author)
         {
             CommandResponse<Author> result = new CommandResponse<Author>();
